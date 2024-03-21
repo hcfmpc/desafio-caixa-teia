@@ -1,9 +1,21 @@
 <div class="row g-0 conteiner-titulo">
 
   <p>Galeria</p>
-  @for (titulo of galeria(); track $index) {
-    <p>{{titulo.id}}</p>
-  }
+
+  <div class="row">
+    <div *ngFor="let titulo of galeriaExibir()" class="col">
+      <app-card-titulo [titulo]="titulo"></app-card-titulo>
+    </div>
+  </div>
+
+  <!-- @for (titulo of galeriaExibir(); track $index) {
+      <app-card-titulo [titulo]="titulo"></app-card-titulo>
+  } -->
+
+  <div class="button-container">
+    <button mat-raised-button (click)="retrocedePagina()" [disabled]="indiceGaleria() === 0">Anterior</button>
+    <button mat-raised-button (click)="avancaPagina()" [disabled]="indiceGaleria() === paginacaoGaleria().length - 1">Próximo</button>
+  </div>
   <!-- <div class="col">
     <div class="conteiner-texto">
 

@@ -1,4 +1,4 @@
-export default class modalidade {
+export default class Modalidade {
 
     icone: string;
     nome: string;

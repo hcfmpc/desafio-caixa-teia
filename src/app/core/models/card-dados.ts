@@ -1,12 +1,17 @@
-export default class Titulo {
+export default class CardDados {
 
+  public nomeAlbum: string;
+  public nomeTitulo: string;
   public albumId: number;
   public id: number;
   public title: string;
   public url: string;
   public thumbnailUrl: string;
 
-  constructor(albumId: number, id: number, title: string, url: string, thumbnailUrl: string) {
+  constructor(nomeAlbum: string, nomeTitulo: string, albumId: number, id: number, title: string, url: string, thumbnailUrl: string) {
+
+    this.nomeAlbum = nomeAlbum;
+    this.nomeTitulo = nomeTitulo;
     this.albumId = albumId;
     this.id = id;
     this.title = title;

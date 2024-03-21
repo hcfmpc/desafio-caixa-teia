@@ -20,4 +20,11 @@ export class FuncoesGaleria {
 
         return queryRequisicao;
     }
+
+    static retornaGaleriaPaginada(galeria: any, size: number) {
+
+      return Array.from({length: Math.ceil(galeria.length / size)}, (v, i) =>
+        galeria.slice(i * size, i * size + size)
+      );
+    }
 }
