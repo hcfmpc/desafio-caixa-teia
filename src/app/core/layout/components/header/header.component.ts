@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 
 import { AppStore } from '../../../store/app.store';
 
@@ -11,6 +11,8 @@ export class HeaderComponent {
 
   public logoCaixaBranco: string = "assets/img/logo_caixa_branco.png"
   private appStore = inject(AppStore);
+  public administracaoApp: string = this.appStore.administracaoApp;
+  public tituloAppHeader: string = this.appStore.tituloAppHeader;
 
   expandirSideNav() {
     this.appStore.updateExpandeSideNav(!this.appStore.expandeSideNav());

@@ -1,112 +1,112 @@
-.conteiner-texto {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  margin-left: 56px;
-}
+// .conteiner-texto {
+//   display: flex;
+//   justify-content: center;
+//   height: 100%;
+//   margin-left: 56px;
+// }
 
-.img-perfil {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin: 0 8px 0 8px;
-  border: 1px solid #FFFFFF;
-}
+// .img-perfil {
+//   width: 36px;
+//   height: 36px;
+//   border-radius: 50%;
+//   margin: 0 8px 0 8px;
+//   border: 1px solid #FFFFFF;
+// }
 
-.div-usuario {
-  background-color: #637a97;
-  padding: 10px 0;
-  margin-top: 30px;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+// .div-usuario {
+//   background-color: #637a97;
+//   padding: 10px 0;
+//   margin-top: 30px;
+//   border-radius: 20px;
+//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+// }
 
-.texto-usuario {
-  font-family: 'Caixa Sm Bd';
-  font-size: 16px;
-}
+// .texto-usuario {
+//   font-family: 'Caixa Sm Bd';
+//   font-size: 16px;
+// }
 
-.div-titulo {
-  margin: 20% 0 30px 0;
-  background-color: #f6f9f9;
-}
+// .div-titulo {
+//   margin: 20% 0 30px 0;
+//   background-color: #f6f9f9;
+// }
 
-.titulo {
-  font-size: 40px;
-  font-family: 'Caixa Sm Bd';
-  line-height: 1;
-  background: linear-gradient(90deg, #005ca9 2%, #F59200 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
+// .titulo {
+//   font-size: 40px;
+//   font-family: 'Caixa Sm Bd';
+//   line-height: 1;
+//   background: linear-gradient(90deg, #005ca9 2%, #F59200 90%);
+//   -webkit-background-clip: text;
+//   background-clip: text;
+//   color: transparent;
+// }
 
-.titulo-painel {
-  font-family: 'Caixa Sm Bd';
-  font-size: 48px;
-  color: #262f3b;
-}
+// .titulo-painel {
+//   font-family: 'Caixa Sm Bd';
+//   font-size: 48px;
+//   color: #262f3b;
+// }
 
-.texto {
-  font-family: 'Caixa Regular';
-  font-size: 16px;
-  color: #3a4859;
-}
+// .texto {
+//   font-family: 'Caixa Regular';
+//   font-size: 16px;
+//   color: #3a4859;
+// }
 
 .conteiner-titulo {
   border-radius: 100px 10px 100px 10px;
   background-color:#F9FBFB;
   border: 2px solid #d0e0e3;
-  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 90%;
 }
 
-.div-img {
-  background-color: #AFCACF;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 34% 100%);
-  height: 100%;
-  border-bottom-right-radius: 98px;
-  border-top-right-radius: 6px;
-}
+// .div-img {
+//   background-color: #AFCACF;
+//   padding: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 34% 100%);
+//   height: 100%;
+//   border-bottom-right-radius: 98px;
+//   border-top-right-radius: 6px;
+// }
 
-.img {
-  background-color: #f6f9f9;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border: 3px solid #005ca9;
-  border-radius: 100px 10px 100px 10px;
-  height: 320px;
-  margin: -100px 0 0 196px;
-}
+// .img {
+//   background-color: #f6f9f9;
+//   padding: 24px;
+//   border-radius: 20px;
+//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+//   border: 3px solid #005ca9;
+//   border-radius: 100px 10px 100px 10px;
+//   height: 320px;
+//   margin: -100px 0 0 196px;
+// }
 
-.div-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
-}
+// .div-btn {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 10%;
+// }
 
-.btn_aux-dest{
-  background-color: #FFF!important;
-  color: #005ca9!important;
-  border: 1px solid #005ca9!important;
-  font-family: 'Caixa Bd';
-  font-size: 16px;
-  letter-spacing: normal;
-}
+// .btn_aux-dest{
+//   background-color: #FFF!important;
+//   color: #005ca9!important;
+//   border: 1px solid #005ca9!important;
+//   font-family: 'Caixa Bd';
+//   font-size: 16px;
+//   letter-spacing: normal;
+// }
 
-.btn_aux-dest:hover{
-  background-color: #F1F9FF;
-}
-.btn_aux-dest:active{
-  background-color: #C6E5FF;
-}
-.btn_aux-dest:focus{
-  border: 1px solid #0F92FF !important;
-  background-color: #FFFFFF;
-}
+// .btn_aux-dest:hover{
+//   background-color: #F1F9FF;
+// }
+// .btn_aux-dest:active{
+//   background-color: #C6E5FF;
+// }
+// .btn_aux-dest:focus{
+//   border: 1px solid #0F92FF !important;
+//   background-color: #FFFFFF;
+// }
