@@ -1,5 +1,9 @@
 <div class="row g-0 conteiner-titulo">
+
   <p>Galeria</p>
+  @for (titulo of galeria(); track $index) {
+    <p>{{titulo.id}}</p>
+  }
   <!-- <div class="col">
     <div class="conteiner-texto">
 
