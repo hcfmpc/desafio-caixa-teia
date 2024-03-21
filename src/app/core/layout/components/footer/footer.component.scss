@@ -1,0 +1,23 @@
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  width: 100%;
+  background: #D9D9D9;
+}
+
+.texto-footer {
+  font-family: 'Caixa Bk';
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  // color: $grafite-lighter-1;
+  color: #4E6178;
+  margin-left: 6px;
+}
+
+.texto-footer > .espacamento {
+  margin: 0px 8px;
+}

@@ -1,0 +1,75 @@
+
+// @import "src/assets/estilos/cores";
+$header-height: 113px;
+
+.default-container {
+  width: 100%;
+  height: calc(100vh - $header-height);
+}
+
+.menu {
+  box-shadow: 4px 0 12px #00000029;
+  background-color: #F9FBFB;
+}
+
+.navList{
+  width: 250px;
+
+}
+
+.lista-menu, .lista-menu-ativada {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #EFF4F5
+}
+
+.lista-menu:hover {
+  background-color: #EFF4F5;
+}
+
+.lista-menu-ativada {
+  background-color: #c6e5ff;
+  border-bottom: 1px solid #005CA9;
+}
+
+.icone-menu, .icone-menu-ativo{
+  font-size: 22px;
+  width: auto;
+  height: auto;
+  margin-right: 4px;
+}
+
+.icone-menu{
+  color: #3a4859;
+}
+
+.icone-menu-ativo{
+  color: #005CA9;
+}
+
+.texto-menu, .texto-menu-ativo{
+  font-family: 'Caixa Bk';
+  font-size: 14px;
+}
+
+.texto-menu{
+  color: #3a4859;
+}
+
+.texto-menu-ativo{
+  color: #005CA9;
+}
+
+mat-drawer-content {
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+::ng-deep .lista-menu .mat-mdc-list-item {
+  -webkit-tap-highlight-color: #c6e5ff;
+  background-color: #c6e5ff;
+}

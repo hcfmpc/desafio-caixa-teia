@@ -1,0 +1,13 @@
+<mat-drawer-container class="default-container" [hasBackdrop]="'false'">
+  <mat-drawer #drawer [mode]="'side'" class="menu">
+    <div class="navList">
+      <div [ngClass]="modalidade.ativo === true ? 'lista-menu-ativada' : 'lista-menu'" (click)="ativaModalidade(modalidade)" *ngFor="let modalidade of modalidades(); let i = index">
+        <mat-icon [ngClass]="modalidade.ativo === true ? 'icone-menu-ativo' : 'icone-menu'">{{modalidade.icone}}</mat-icon>
+        <span class="texto-menu" [ngClass]="modalidade.ativo === true ? 'texto-menu-ativo' : 'texto-menu'">{{modalidade.nome}}</span>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="default-mat-drawer-content">
+    <router-outlet/>
+  </mat-drawer-content>
+</mat-drawer-container>

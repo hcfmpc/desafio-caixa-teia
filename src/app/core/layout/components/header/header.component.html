@@ -1,0 +1,31 @@
+<mat-toolbar class="toolbar">
+  <div class="informacao-projeto">
+    <div class="icone-container">
+      <button mat-icon-button class="botao-menu" (click)="expandirSideNav()">
+        <mat-icon style="border-radius: 10px; margin-bottom: 1px;">menu</mat-icon>
+      </button>
+    </div>
+    <img style="align-self: center;" height="18px" [src]="logoCaixaBranco" alt="CAIXA">
+    <mat-divider [vertical]="true" class="divider"></mat-divider>
+    <span class="gestao-aplicacao">CEOPE RE</span>
+    <span class="nome-aplicacao">Painel Inovação</span>
+  </div>
+  <div class="spacer"></div>
+  <div class="conteiner-usuario">
+    <div style="margin-top: -1px;">
+      <span class="nome-usuario">Teste</span>
+    </div>
+    <ng-template #exibirLoader>
+      <mat-progress-spinner
+        class="loader"
+        mode="indeterminate"
+        color="#ffffff"
+        strokeWidth="10"
+        diameter="60"
+      ></mat-progress-spinner>
+    </ng-template>
+    <mat-divider [vertical]="true" class="divider-nome-usuario"></mat-divider>
+    <span class="nome-classificacao">#EXTERNO.TODOS</span>
+  </div>
+  <div class="">&nbsp;&nbsp;</div>
+</mat-toolbar>

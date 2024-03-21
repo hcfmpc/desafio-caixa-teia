@@ -1,0 +1,180 @@
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  // background-color: $azul_cx-standard;
+  background-color:  #005ca9;
+  // color: $cinza-lighter-2;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "futura-medium";
+}
+
+.toolbar .informacao-projeto {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  height: 48px;
+}
+
+.toolbar img {
+  margin: 0 8px;
+}
+
+.toolbar .icone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // margin-right: 8px;
+  height: 48px;
+  width: 48px;
+  border-radius: 8%;
+}
+
+::ng-deep .toolbar .icone-container .mat-mdc-icon-button .mat-mdc-button-ripple,
+::ng-deep .toolbar .icone-container .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+  border-radius: 4px;
+}
+
+.icone-container:hover{
+  background-color: rgba(0, 119, 219, 0.4);
+  // opacity: 48%;
+}
+
+//   .icone-container:active{
+//     background-color: transparent ;
+//     border: 1px solid rgba(241, 249, 255, 0.4);
+// }
+
+.toolbar .icone-caixa {
+  margin-inline: 8px;
+  height: 16px;
+  width: 72px;
+}
+
+.divider{
+  width: 1px;
+  height: 24px;
+  // border: 1px solid $cinza-darker-2;
+   border: 1px solid #8fb5bc;
+  border-radius: 50px;
+  // background-color: $cinza-darker-2;
+  background-color: #8fb5bc;
+  margin-inline: 8px;
+}
+
+.toolbar .gestao-aplicacao {
+  margin-inline: 8px;
+  font-size: 20px;
+  // font-family: "Futura Md BT";
+  font-family: 'Caixa Bd';
+}
+
+.toolbar .nome-aplicacao {
+  margin-inline: 8px;
+  font-size: 21px;
+  // font-family: "Futura Md";
+  font-family: 'Caixa Bk';
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.nome-usuario, .nome-classificacao, .primeitoNome-usuario {
+  font-family: "Futura Md";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+.divider-nome-usuario{
+  width: 1px;
+  height: 18px;
+  // border: 1px solid $cinza-lighter-2;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  // background-color: $cinza-lighter-2;
+  background-color: #ffffff;
+  margin-inline: 12px;
+}
+
+.toolbar .conteiner-usuario{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  height: 48px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.title-menu-user{
+  font-size: 16px;
+  font-family: "Futura Md BT";
+}
+
+.text-content{
+  font-family: 'Futura Md BT';
+  font-size: 12px;
+  // color: $cinza-lighter-2;
+  color: #ffffff;
+  margin-left: 28px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.text-classification{
+  font-family: 'Futura Md';
+  font-size: 12px;
+  // color: $cinza-lighter-2;
+  color: #ffffff;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.primeitoNome-usuario {
+  display: none;
+}
+
+.loader{
+  width: 22px !important;
+  height: 24px !important;
+  --mdc-circular-progress-active-indicator-color: #ffffff;
+}
+
+@media screen and (max-width: 984px) {
+
+  .primeitoNome-usuario {
+    display: block;
+  }
+
+  .nome-usuario {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 730px) {
+
+  .primeitoNome-usuario {
+    display: none;
+  }
+
+  .nome-usuario {
+    display: none;
+  }
+
+  .divider-nome-usuario{
+    display: none;
+  }
+
+  .nome-classificacao{
+    display: none;
+  }
+}
+
