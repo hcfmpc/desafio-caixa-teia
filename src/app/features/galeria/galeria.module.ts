@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FormsModule } from '@angular/forms';
+
 
 import { GaleriaComponent } from './galeria.component';
 import { CardTituloComponent } from '../../shared/components/card-titulo/card-titulo.component';
@@ -9,11 +15,15 @@ import { CardTituloComponent } from '../../shared/components/card-titulo/card-ti
 @NgModule({
   declarations: [
     GaleriaComponent,
-
   ],
   imports: [
     CommonModule,
-    CardTituloComponent
+    CardTituloComponent,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    FormsModule
   ]
 })
 export class GaleriaModule { }

@@ -3,12 +3,36 @@
   background-color:#F9FBFB;
   border: 2px solid #d0e0e3;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 90%;
+  align-items: center;
+  // height: 90%;
 }
-
 
 .card-titulo {
   display: flex;
-  flex-direction: column;
+  flex: 1 0 20%;
   justify-content: center;
+}
+
+.filtro-titulos {
+  text-align: end;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.btn-limpar {
+  padding: 0px;
+  margin-top: -16px;
+  width: 36px;
+  height: 36px;
+  margin-right: 3px;
+}
+
+.limpar{
+  padding: 0;
+}
+
+::ng-deep .btn-limpar.mat-mdc-icon-button.mat-mdc-button-base {
+  padding-top: 0px;
 }

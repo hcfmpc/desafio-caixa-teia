@@ -1,47 +1,30 @@
+<div class="row g-0 filtro-titulos mb-3">
+  <div class="col">
+    <mat-form-field appearance="outline" class="form-pesquisa" mat-elevation-z5>
+      <input
+        [(ngModel)]="textoInput"
+        (keyup)="atualizaFiltroTextoInput()"
+        (change)="atualizaFiltroTextoInput()"
+        matInput class="input-pesquisa"
+        placeholder="Pesquise..."
+        style="font-family: Futura Bk BT; font-size: 16px; font-weight: 400; line-height: 22px; letter-spacing: 0em; color: #3a4859 !important;">
+        <button *ngIf="textoInput" matSuffix mat-icon-button aria-label="Clear" (click)="limparInput()" class="btn-limpar">
+          <mat-icon class="limpar">close</mat-icon>
+        </button>
+    </mat-form-field>
+  </div>
+</div>
 <div class="row g-0 conteiner-titulo">
 
-  <p>Galeria</p>
 
-  <div class="row">
-    <div *ngFor="let titulo of galeriaExibir()" class="col">
+  @for (titulo of galeriaExibir(); track $index) {
+    <div class="col card-titulo">
       <app-card-titulo [titulo]="titulo"></app-card-titulo>
     </div>
-  </div>
-
-  <!-- @for (titulo of galeriaExibir(); track $index) {
-      <app-card-titulo [titulo]="titulo"></app-card-titulo>
-  } -->
+  }
 
   <div class="button-container">
     <button mat-raised-button (click)="retrocedePagina()" [disabled]="indiceGaleria() === 0">Anterior</button>
     <button mat-raised-button (click)="avancaPagina()" [disabled]="indiceGaleria() === paginacaoGaleria().length - 1">Próximo</button>
   </div>
-  <!-- <div class="col">
-    <div class="conteiner-texto">
-
-      <div style="width: 500px;">
-        <div class="div-usuario">
-          <img class="img-perfil" [src]="urlFoto">
-          <span class="texto-usuario">Olá, Bruno</span>
-        </div>
-        <div class="div-titulo">
-          <span class="titulo">Bem Vindo(a)</span><br>
-          <span class="titulo-painel">Ao Painel Inovação!</span>
-        </div>
-        <p class="texto">Proceda a análise da conformidade com a Agiliza, uma aplicação intuitiva, que reúne num único lugar dados e funcionalidades que permitem aumentar sua produtividade com segurança.</p>
-        <div class="div-btn">
-          <button class="btn_aux-dest" mat-flat-button (click)="expandirSideNav()">Vamos Começar!</button>&nbsp;
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!-- <div class="col" >
-    <div class="div-img">
-      <div class="img">
-        <img style="align-self: center;" height="400px" [src]="imgInovacao" alt="CAIXA">
-      </div>
-    </div>
-  </div> -->
-
 </div>

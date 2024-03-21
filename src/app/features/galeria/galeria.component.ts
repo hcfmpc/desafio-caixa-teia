@@ -14,11 +14,16 @@ export class GaleriaComponent implements OnInit {
 
   private galeriaStore = inject(GaleriaStore);
   private galeriaService = inject(GaleriaService);
+
   private limiteitens = signal(10);
   public indiceGaleria = signal(0);
 
+  public galeria = computed<titulo[]>(() => this.galeriaStore.galeria());
   public paginacaoGaleria = computed<titulo[][]>(() => FuncoesGaleria.retornaGaleriaPaginada(this.galeriaStore.galeria(), this.limiteitens()));
   public galeriaExibir = computed<titulo[]>(() => this.paginacaoGaleria()[this.indiceGaleria()]);
+
+  public textoInput: string = '';
+  public filtroTextoInput = signal<string>('');
 
   constructor() { }
 
@@ -39,6 +44,26 @@ export class GaleriaComponent implements OnInit {
     (this.indiceGaleria() > 0) ?
       this.indiceGaleria.set(this.indiceGaleria() - 1)
       : false;
+  }
+
+  limparInput() {
+    this.textoInput = '';
+    this.filtroTextoInput.set('');
+  }
+
+  atualizaFiltroTextoInput() {
+    if(this.textoInput){
+      this.filtroTextoInput.set(this.textoInput);
+    }
+  }
+
+  retornaGaleriaComFiltroTextoInput(galeria: titulo[]){
+
+    return galeria.filter((titulo) => {
+      // if(){
+      return titulo
+      // }
+    });
   }
 
   // alteraLimiteItens(limite: number) {

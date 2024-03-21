@@ -3,13 +3,10 @@
     <mat-card-header>
       <!-- <div mat-card-avatar class="header-image"></div> -->
       <mat-card-title>{{ nomeAlbum }}</mat-card-title>
-      <mat-card-subtitle>{{ nomeTitulo }}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="titulo.thumbnailUrl">
     <mat-card-content>
-      <p>
-        {{ titulo.title }}
-      </p>
+      <p>{{ nomeTitulo }}</p>
     </mat-card-content>
   </mat-card>
 </div>
