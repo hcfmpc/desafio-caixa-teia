@@ -18,12 +18,23 @@ export class GaleriaComponent implements OnInit {
   private limiteitens = signal(10);
   public indiceGaleria = signal(0);
 
-  public galeria = computed<titulo[]>(() => this.galeriaStore.galeria());
-  public paginacaoGaleria = computed<titulo[][]>(() => FuncoesGaleria.retornaGaleriaPaginada(this.galeriaStore.galeria(), this.limiteitens()));
-  public galeriaExibir = computed<titulo[]>(() => this.paginacaoGaleria()[this.indiceGaleria()]);
+  public galeria = computed<titulo[]>(() => {
+
+    const galeriaOriginal = this.galeriaStore.galeria();
+    const galeriaFiltrada = FuncoesGaleria.retornaGaleriaComFiltroTextoInput(galeriaOriginal, this.filtroTextoInput());
+    const galeriaOrdenada = FuncoesGaleria.retornaGaleriaOrdenada(galeriaFiltrada, this.ordenamentoDaGaleria());
+    const galeriaPaginada = FuncoesGaleria.retornaGaleriaPaginada(galeriaOrdenada, this.limiteitens());
+    this.paginacaoGaleriaLenght = galeriaPaginada.length;
+
+    return galeriaPaginada[this.indiceGaleria()];
+  });
+
+  public paginacaoGaleriaLenght = 0;
 
   public textoInput: string = '';
   public filtroTextoInput = signal<string>('');
+
+  public ordenamentoDaGaleria = signal({albumIdCrescente: true, idCrescente: true});
 
   constructor() { }
 
@@ -34,7 +45,7 @@ export class GaleriaComponent implements OnInit {
 
   avancaPagina() {
 
-    (this.paginacaoGaleria().length > this.indiceGaleria() + 1) ?
+    (this.paginacaoGaleriaLenght > this.indiceGaleria() + 1) ?
       this.indiceGaleria.set(this.indiceGaleria() + 1)
       : false;
   }
@@ -52,19 +63,10 @@ export class GaleriaComponent implements OnInit {
   }
 
   atualizaFiltroTextoInput() {
-    if(this.textoInput){
-      this.filtroTextoInput.set(this.textoInput);
-    }
+    this.filtroTextoInput.set(this.textoInput || '');
   }
 
-  retornaGaleriaComFiltroTextoInput(galeria: titulo[]){
 
-    return galeria.filter((titulo) => {
-      // if(){
-      return titulo
-      // }
-    });
-  }
 
   // alteraLimiteItens(limite: number) {
   //   this.limiteitens.set(limite);

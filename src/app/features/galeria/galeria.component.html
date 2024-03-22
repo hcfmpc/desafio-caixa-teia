@@ -17,7 +17,7 @@
 <div class="row g-0 conteiner-titulo">
 
 
-  @for (titulo of galeriaExibir(); track $index) {
+  @for (titulo of galeria(); track $index) {
     <div class="col card-titulo">
       <app-card-titulo [titulo]="titulo"></app-card-titulo>
     </div>
@@ -25,6 +25,6 @@
 
   <div class="button-container">
     <button mat-raised-button (click)="retrocedePagina()" [disabled]="indiceGaleria() === 0">Anterior</button>
-    <button mat-raised-button (click)="avancaPagina()" [disabled]="indiceGaleria() === paginacaoGaleria().length - 1">Próximo</button>
+    <button mat-raised-button (click)="avancaPagina()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Próximo</button>
   </div>
 </div>
