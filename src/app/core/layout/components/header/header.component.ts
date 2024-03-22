@@ -14,7 +14,7 @@ export class HeaderComponent {
   public administracaoApp: string = this.appStore.administracaoApp;
   public tituloAppHeader: string = this.appStore.tituloAppHeader;
 
-  expandirSideNav() {
+  alternarSideNav() {
     this.appStore.updateExpandeSideNav(!this.appStore.expandeSideNav());
   }
 }

@@ -14,7 +14,6 @@ $header-height: 113px;
 
 .navList{
   width: 250px;
-
 }
 
 .lista-menu, .lista-menu-ativada {
@@ -74,9 +73,13 @@ mat-drawer-content {
   background-color: #c6e5ff;
 }
 
-// @media screen and (max-width: 984px) {
+@media screen and (max-width: 500px) {
 
-//   .default-container {
-//     display: none;
-//   }
-// }
+  .navList{
+    width: 500px;
+  }
+
+  .side-nav-ativada{
+    display: none;
+  }
+}

@@ -44,7 +44,8 @@ $tamanho: 16px;
 }
 
 .titulo {
-  font-size: 40px;
+  // font-size: 40px;
+  font-size: clamp(20px, 2vw, 100em);
   font-family: 'Caixa Sm Bd';
   line-height: 1;
   background: linear-gradient(90deg, #005ca9 2%, #4E6178 90%);
@@ -55,7 +56,8 @@ $tamanho: 16px;
 
 .titulo-painel {
   font-family: 'Caixa Sm Bd';
-  font-size: 48px;
+  // font-size: 48px;
+  font-size: clamp(24px, 2vw, 100em);
   color: #262f3b;
   text-align: center;
 }
@@ -87,4 +89,19 @@ $tamanho: 16px;
   font-family: $fonte;
   font-size: $tamanho;
   letter-spacing: normal;
+}
+
+@media screen and (max-width: 500px)
+{
+  .div-usuario {
+    margin-inline: 36px;
+  }
+
+  .titulo {
+    margin-left: 50px;
+  }
+
+  .texto {
+    margin-inline: 30px;
+  }
 }

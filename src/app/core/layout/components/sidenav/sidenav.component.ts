@@ -16,6 +16,7 @@ export class SidenavComponent {
   private appStore = inject(AppStore);
   private router = inject(Router);
   public modalidades = computed<modalidade[]>(()=>this.appStore.modalidades());
+  public expandeSideNav = computed(()=>this.appStore.expandeSideNav());
 
   constructor() {
 
@@ -27,6 +28,10 @@ export class SidenavComponent {
   ativaModalidade(modalidade: any) {
     this.appStore.updateAtivaModalidade(modalidade);
     this.router.navigate([modalidade.rota]);
+  }
+
+  alternarSideNav() {
+    this.appStore.updateExpandeSideNav(!this.appStore.expandeSideNav());
   }
 
 }
