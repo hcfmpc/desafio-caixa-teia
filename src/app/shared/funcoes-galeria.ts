@@ -15,7 +15,6 @@ export class FuncoesGaleria {
         }else if (filtro.title) {
 
             queryRequisicao = `?title=${filtro.title}`;
-
         }
 
         return queryRequisicao;
