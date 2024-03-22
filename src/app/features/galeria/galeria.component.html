@@ -16,31 +16,43 @@
 </div>
 <div class="row g-0 conteiner-titulo">
 
+  @if (galeriaCarregada()) {
 
-  @for (titulo of galeria(); track $index) {
-    <div class="col card-titulo">
-      <app-card-titulo [titulo]="titulo"></app-card-titulo>
+    @for (titulo of galeria(); track $index) {
+      <div class="col card-titulo">
+        <app-card-titulo [titulo]="titulo"></app-card-titulo>
+      </div>
+    }
+
+    <div class="button-container">
+      <button mat-raised-button (click)="irParaPagina(0); scrollToTop()" [disabled]="indiceGaleria() === 0">Primeiro</button>
+      <button mat-raised-button (click)="retrocedePagina(); scrollToTop()" [disabled]="indiceGaleria() === 0">Anterior</button>
+      <span> Página {{ indiceGaleria() }} de {{ paginacaoGaleriaLenght - 1 }} </span>
+      <button mat-raised-button (click)="avancaPagina(); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Próximo</button>
+      <button mat-raised-button (click)="irParaPagina(paginacaoGaleriaLenght - 1); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Último</button>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Album {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Crescente' : 'Decrescente' }}</button>
+      <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Id  {{ this.ordenamentoDaGaleria().idCrescente ? 'Crescente' : 'Decrescente' }}</button>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="outline">
+        <mat-label>Itens por página</mat-label>
+        <mat-select [(value)]="itensPorPagina" (selectionChange)="atualizaLimiteItensPorPagina($event.value)">
+          <mat-option value="10">10</mat-option>
+          <mat-option value="50">50</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   }
+  @else {
+    <mat-progress-spinner
+      class="loader"
+      mode="indeterminate"
+      color="#ffffff"
+      strokeWidth="10"
+      diameter="60"
+    ></mat-progress-spinner>
+  }
 
-  <div class="button-container">
-    <button mat-raised-button (click)="irParaPagina(0); scrollToTop()" [disabled]="indiceGaleria() === 0">Primeiro</button>
-    <button mat-raised-button (click)="retrocedePagina(); scrollToTop()" [disabled]="indiceGaleria() === 0">Anterior</button>
-    <span> Página {{ indiceGaleria() }} de {{ paginacaoGaleriaLenght - 1 }} </span>
-    <button mat-raised-button (click)="avancaPagina(); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Próximo</button>
-    <button mat-raised-button (click)="irParaPagina(paginacaoGaleriaLenght - 1); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Último</button>
-  </div>
-  <div class="button-container">
-    <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Album {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Crescente' : 'Decrescente' }}</button>
-    <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Id  {{ this.ordenamentoDaGaleria().idCrescente ? 'Crescente' : 'Decrescente' }}</button>
-  </div>
-  <div class="col">
-    <mat-form-field appearance="outline">
-      <mat-label>Itens por página</mat-label>
-      <mat-select [(value)]="itensPorPagina" (selectionChange)="atualizaLimiteItensPorPagina($event.value)">
-        <mat-option value="10">10</mat-option>
-        <mat-option value="50">50</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
 </div>

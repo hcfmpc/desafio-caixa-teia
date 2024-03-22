@@ -15,6 +15,7 @@ export class GaleriaComponent implements OnInit {
   private galeriaStore = inject(GaleriaStore);
   private galeriaService = inject(GaleriaService);
 
+  public galeriaCarregada = computed(() => this.galeriaStore.galeria().length > 0);
   public itensPorPagina: string = '10';
   private limiteItensPorPagina = signal<number>(10);
   public indiceGaleria = signal<number>(0);
@@ -27,13 +28,13 @@ export class GaleriaComponent implements OnInit {
     const galeriaPaginada = FuncoesGaleria.retornaGaleriaPaginada(galeriaOrdenada, this.limiteItensPorPagina());
     this.paginacaoGaleriaLenght = galeriaPaginada.length;
 
-    console.log('dados', {
-      paginacaoGaleriaLenght: this.paginacaoGaleriaLenght,
-      indiceGaleria: this.indiceGaleria(),
-      limiteItensPorPagina: this.limiteItensPorPagina(),
-      itensPorPagina: this.itensPorPagina,
-      ordenamentoDaGaleria: this.ordenamentoDaGaleria(),
-    });
+    // console.log('dados', {
+    //   paginacaoGaleriaLenght: this.paginacaoGaleriaLenght,
+    //   indiceGaleria: this.indiceGaleria(),
+    //   limiteItensPorPagina: this.limiteItensPorPagina(),
+    //   itensPorPagina: this.itensPorPagina,
+    //   ordenamentoDaGaleria: this.ordenamentoDaGaleria(),
+    // });
 
     return galeriaPaginada[this.indiceGaleria()];
   });
