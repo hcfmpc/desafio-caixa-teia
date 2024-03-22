@@ -24,18 +24,18 @@
       </div>
     }
 
-    <div class="button-container">
-      <button mat-raised-button (click)="irParaPagina(0); scrollToTop()" [disabled]="indiceGaleria() === 0">Primeiro</button>
-      <button mat-raised-button (click)="retrocedePagina(); scrollToTop()" [disabled]="indiceGaleria() === 0">Anterior</button>
+    <div class="button-container mb-2">
+      <button class="mx-1" mat-raised-button (click)="irParaPagina(0); scrollToTop()" [disabled]="indiceGaleria() === 0"><<</button>
+      <button class="mx-1" mat-raised-button (click)="retrocedePagina(); scrollToTop()" [disabled]="indiceGaleria() === 0"><</button>
       <span> Página {{ indiceGaleria() }} de {{ paginacaoGaleriaLenght - 1 }} </span>
-      <button mat-raised-button (click)="avancaPagina(); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Próximo</button>
-      <button mat-raised-button (click)="irParaPagina(paginacaoGaleriaLenght - 1); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">Último</button>
+      <button class="mx-1" mat-raised-button (click)="avancaPagina(); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">></button>
+      <button class="mx-1" mat-raised-button (click)="irParaPagina(paginacaoGaleriaLenght - 1); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">>></button>
     </div>
     <div class="button-container">
-      <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Album {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Crescente' : 'Decrescente' }}</button>
-      <button mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Id  {{ this.ordenamentoDaGaleria().idCrescente ? 'Crescente' : 'Decrescente' }}</button>
+      <button class="mx-1" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Ordenar Álbum {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Decrescente' : 'Crescente' }}</button>
+      <button class="mx-1" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Ordenar Título  {{ this.ordenamentoDaGaleria().idCrescente ? 'Decrescente' : 'Crescente' }}</button>
     </div>
-    <div class="col">
+    <div class="button-container my-3">
       <mat-form-field appearance="outline">
         <mat-label>Itens por página</mat-label>
         <mat-select [(value)]="itensPorPagina" (selectionChange)="atualizaLimiteItensPorPagina($event.value)">

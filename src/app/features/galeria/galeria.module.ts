@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { GaleriaComponent } from './galeria.component';
 import { CardTituloComponent } from '../../shared/components/card-titulo/card-titulo.component';
+import { MatButton } from '@angular/material/button';
 
 
 
@@ -22,6 +23,7 @@ import { CardTituloComponent } from '../../shared/components/card-titulo/card-ti
     MatProgressSpinnerModule,
     FormsModule,
     MatSelectModule,
+    MatButton
   ],
   declarations: [
     GaleriaComponent,
