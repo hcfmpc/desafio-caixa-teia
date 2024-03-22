@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
-
+import { MatSelectModule } from '@angular/material/select';
 
 import { GaleriaComponent } from './galeria.component';
 import { CardTituloComponent } from '../../shared/components/card-titulo/card-titulo.component';
@@ -23,7 +23,8 @@ import { CardTituloComponent } from '../../shared/components/card-titulo/card-ti
     MatIconModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
   ]
 })
 export class GaleriaModule { }

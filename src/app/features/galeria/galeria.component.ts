@@ -15,16 +15,25 @@ export class GaleriaComponent implements OnInit {
   private galeriaStore = inject(GaleriaStore);
   private galeriaService = inject(GaleriaService);
 
-  private limiteitens = signal(10);
-  public indiceGaleria = signal(0);
+  public itensPorPagina: string = '10';
+  private limiteItensPorPagina = signal<number>(10);
+  public indiceGaleria = signal<number>(0);
 
   public galeria = computed<titulo[]>(() => {
 
     const galeriaOriginal = this.galeriaStore.galeria();
     const galeriaFiltrada = FuncoesGaleria.retornaGaleriaComFiltroTextoInput(galeriaOriginal, this.filtroTextoInput());
     const galeriaOrdenada = FuncoesGaleria.retornaGaleriaOrdenada(galeriaFiltrada, this.ordenamentoDaGaleria());
-    const galeriaPaginada = FuncoesGaleria.retornaGaleriaPaginada(galeriaOrdenada, this.limiteitens());
+    const galeriaPaginada = FuncoesGaleria.retornaGaleriaPaginada(galeriaOrdenada, this.limiteItensPorPagina());
     this.paginacaoGaleriaLenght = galeriaPaginada.length;
+
+    console.log('dados', {
+      paginacaoGaleriaLenght: this.paginacaoGaleriaLenght,
+      indiceGaleria: this.indiceGaleria(),
+      limiteItensPorPagina: this.limiteItensPorPagina(),
+      itensPorPagina: this.itensPorPagina,
+      ordenamentoDaGaleria: this.ordenamentoDaGaleria(),
+    });
 
     return galeriaPaginada[this.indiceGaleria()];
   });
@@ -57,6 +66,11 @@ export class GaleriaComponent implements OnInit {
       : false;
   }
 
+  irParaPagina(pagina: number) {
+
+    this.indiceGaleria.set(pagina);
+  }
+
   limparInput() {
     this.textoInput = '';
     this.filtroTextoInput.set('');
@@ -66,10 +80,22 @@ export class GaleriaComponent implements OnInit {
     this.filtroTextoInput.set(this.textoInput || '');
   }
 
+  atualizaLimiteItensPorPagina(novoLimite: string){
+    this.limiteItensPorPagina.set(parseInt(novoLimite));
+    this.indiceGaleria.set(0); // volta para a primeira página ao alterar o limite de itens por página
+  }
 
+  atualizaOrdenamentoDaGaleria(ordem: string) {
 
-  // alteraLimiteItens(limite: number) {
-  //   this.limiteitens.set(limite);
-  // }
+    this.ordenamentoDaGaleria.update(ordenamentoAtual => {
+      return {
+        albumIdCrescente: ordem === 'albumId' ? !ordenamentoAtual.albumIdCrescente : ordenamentoAtual.albumIdCrescente,
+        idCrescente: ordem === 'id' ? !ordenamentoAtual.idCrescente : ordenamentoAtual.idCrescente
+      }
+    })
+  }
 
+  scrollToTop() {
+    document.getElementsByTagName('app-galeria')[0].parentElement?.scrollTo({top: 0,  behavior: "smooth"});
+  }
 }

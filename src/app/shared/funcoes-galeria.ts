@@ -32,14 +32,8 @@ export class FuncoesGaleria {
 
     static retornaGaleriaOrdenada(galeria: any, ordemCrescente: {albumIdCrescente: boolean, idCrescente: boolean}) {
 
-      if(ordemCrescente.idCrescente) {
-        galeria = galeria.sort((a: any, b: any) => ordemCrescente ?  a.id - b.id : b.id - a.id);
-      }
-
-      if(ordemCrescente.albumIdCrescente){
-        galeria = galeria.sort((a: any, b: any) => ordemCrescente ? a.albumId - b.albumId :  b.albumId - a.albumId);
-      }
-
+      galeria = galeria.sort((a: any, b: any) => ordemCrescente.idCrescente ?  a.id - b.id : b.id - a.id);
+      galeria = galeria.sort((a: any, b: any) => ordemCrescente.albumIdCrescente ? a.albumId - b.albumId :  b.albumId - a.albumId);
       return galeria;
     }
 
