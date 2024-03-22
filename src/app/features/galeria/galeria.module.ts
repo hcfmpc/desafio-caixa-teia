@@ -13,9 +13,6 @@ import { CardTituloComponent } from '../../shared/components/card-titulo/card-ti
 
 
 @NgModule({
-  declarations: [
-    GaleriaComponent,
-  ],
   imports: [
     CommonModule,
     CardTituloComponent,
@@ -25,6 +22,9 @@ import { CardTituloComponent } from '../../shared/components/card-titulo/card-ti
     MatProgressSpinnerModule,
     FormsModule,
     MatSelectModule,
+  ],
+  declarations: [
+    GaleriaComponent,
   ]
 })
 export class GaleriaModule { }

@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { LayoutModule } from '../core/layout/layout.module';
-import { GaleriaModule } from '../features/galeria/galeria.module';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, LayoutModule, GaleriaModule],
+  imports: [CommonModule, RouterOutlet, LayoutModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -5,6 +5,7 @@ import { AppStore } from '../store/app.store';
 import { GaleriaStore } from '../store/galeria/galeria.store';
 import { FuncoesGaleria } from '../../shared/funcoes-galeria';
 import Titulo from '../models/titulo';
+import { retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,7 @@ export class GaleriaService {
     const queryRequisicaoComFiltro = FuncoesGaleria.retornaQueryRequisicao(objFiltro);
 
     this.httpService.get(queryRequisicaoComFiltro)
+    .pipe(retry(3))
     .subscribe({
       next: (galeria: Titulo[]) => {
 

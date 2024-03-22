@@ -12,12 +12,16 @@ import { LayoutComponent } from './layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { GaleriaModule } from '../../features/galeria/galeria.module';
+import { HomeModule } from '../../features/home/home.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    GaleriaModule,
+    HomeModule,
 
     //Material Modules:
     MatSidenavModule, MatToolbarModule, MatIconModule, MatDividerModule, MatProgressSpinnerModule, MatButtonModule,
