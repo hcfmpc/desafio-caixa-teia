@@ -61,3 +61,10 @@
 .setas-paginacao {
   font-weight: bold;
 }
+
+@media screen and (max-width: 500px){
+
+  .button-ordem {
+    margin-bottom: 10px;
+  }
+}

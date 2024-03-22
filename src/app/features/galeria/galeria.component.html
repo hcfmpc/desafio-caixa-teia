@@ -35,8 +35,8 @@
       <button class="mx-1" mat-raised-button (click)="irParaPagina(paginacaoGaleriaLenght - 1); scrollToTop()" [disabled]="indiceGaleria() === paginacaoGaleriaLenght - 1">>></button>
     </div>
     <div class="button-container">
-      <button class="mx-1" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Ordenar Álbum {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Decrescente' : 'Crescente' }}</button>
-      <button class="mx-1" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Ordenar Título  {{ this.ordenamentoDaGaleria().idCrescente ? 'Decrescente' : 'Crescente' }}</button>
+      <button class="mx-1 button-ordem" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('albumId'); scrollToTop()">Ordenar Álbum {{ this.ordenamentoDaGaleria().albumIdCrescente ? 'Decrescente' : 'Crescente' }}</button>
+      <button class="mx-1 button-ordem" mat-raised-button (click)="atualizaOrdenamentoDaGaleria('id'); scrollToTop()">Ordenar Título  {{ this.ordenamentoDaGaleria().idCrescente ? 'Decrescente' : 'Crescente' }}</button>
     </div>
     <div class="button-container my-3">
       <mat-form-field appearance="outline">
