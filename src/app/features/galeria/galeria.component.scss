@@ -16,8 +16,18 @@
   justify-content: center;
 }
 
+.titulo-painel {
+  font-family: 'Caixa Sm Bd';
+  // font-size: 48px;
+  font-size: clamp(24px, 2vw, 10em);
+  word-break: break-all;
+  // color: #262f3b;
+  color: #3a4859;
+  text-align: center;
+}
+
 .filtro-titulos {
-  text-align: end;
+  text-align: center;
 }
 
 ::ng-deep .mat-mdc-form-field-subscript-wrapper {
