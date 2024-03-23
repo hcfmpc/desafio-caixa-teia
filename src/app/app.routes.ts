@@ -12,7 +12,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: GaleriaComponent
+        redirectTo: 'home',
       },
       {
         path: 'home',
